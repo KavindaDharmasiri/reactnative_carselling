@@ -4,14 +4,22 @@ import Login from './screens/Login'
 import Register from './screens/Register'
 import AddData from './screens/AddData'
 import LoadData from './screens/LoadData'
+import { useEffect } from 'react';
 import Home from './screens/Home'
 import UpdateDeleteVehicle from './screens/UpdateDeleteVehicle'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from 'react-native-splash-screen'
 
 const Stack = createStackNavigator();
 
+
 export default function App() {
+  useEffect(() => {
+    SplashScreen.hide();
+  })
+
+  
   return (
     <NavigationContainer>
       <Stack.Navigator >
