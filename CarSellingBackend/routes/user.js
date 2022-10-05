@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
 
     var query = "INSERT INTO users (id, name,address,contact, password) VALUES (?, ?, ?,?,?)";
 
-    connection.query(query, [id, name,address , contact, password], (err) => {
+    connection.query(query, [id, name, address, contact, password], (err) => {
         if (err) {
             res.send({'message': 'duplicate entry'})
         } else {
@@ -56,7 +56,7 @@ router.put('/', (req, res) => {
 
     var query = "UPDATE users SET username=?,address=?, contact=?, password=? WHERE id=?";
 
-    connection.query(query, [name,address,contact, password, id], (err, rows) => {
+    connection.query(query, [name, address, contact, password, id], (err, rows) => {
         if (err) console.log(err);
 
         if (rows.affectedRows > 0) {
